@@ -17,6 +17,7 @@ class Author(models.Model):
 def cover_upload_path(instance, filename):
     return '/'.join(['books', str(instance.id), filename])
 
+
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, )
