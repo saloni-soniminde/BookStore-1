@@ -1,21 +1,23 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.utils import timezone
+import paypalrestsdk
 
 from .models import Book, BookOrder, Cart
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'template.html')
+    return render(request, 'base.html')
 
 
 def store(request):
     books = Book.objects.all()
     context = {
         'books': books,
-
     }
-    return render(request, "base.html", context)
+    return render(request, 'base.html', context)
 
 
 def book_details(request, book_id):

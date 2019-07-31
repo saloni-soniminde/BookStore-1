@@ -15,18 +15,21 @@ Including another URLconf
 """
 import registration
 from django.conf.urls import url
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+
+from BookStore import settings
 from store import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
+    path('', views.store, name='index'),
     path('accounts/', include('registration.backends.default.urls')),
     path('store/', include("store.urls"), name="store"),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
-    # path('social/', include('social_django.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#Works if debug is false. gives url for media files DJANGO is just an application server
 
 
 

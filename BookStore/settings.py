@@ -69,6 +69,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -134,6 +135,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#Media
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+MEDIA_URL ="/media/"
+
+
 # Registration
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
@@ -156,3 +162,14 @@ EMAIL_USE_TLS = True
 
 SOCIAL_AUTH_GITHUB_KEY = 'ba3f6913cf2b3ecdbb0a'
 SOCIAL_AUTH_GITHUB_SECRET = '01f68fd2462b80b5633883260657bf50d03d2b10'
+
+#PAYTM INTEGRATION
+# PAYTM_MERCHANT_KEY= "jxMhWT19653168566881"
+# PAYTM_MERCHANT_ID = "QAKlxXdFPfRHXjq#"
+# HOST_URL = "http://121.0.0.1:8080"
+# PAYTM_CALLBACK_URL = "/paytm/response/"
+# if DEBUG:
+#     PAYTM_MERCHANT_KEY = "jxMhWT19653168566881"
+#     PAYTM_MERCHANT_ID = "QAKlxXdFPfRHXjq#"
+#     PAYTM_WEBSITE = 'WEB_STAGING'
+#     HOST_URL = 'http://localhost:8000'

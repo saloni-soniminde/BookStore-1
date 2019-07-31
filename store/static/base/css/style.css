@@ -267,7 +267,7 @@ img.bg {
 
 .storefront_book_display{
     width: 200px;
-    display: inline-grid;
+    display: inline-table;
     text-align: center;
 }
 
